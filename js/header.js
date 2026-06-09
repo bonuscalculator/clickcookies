@@ -27,7 +27,7 @@
       <div class="header-inner">
         <a href="#" class="header-logo" aria-label="ClickCookies Home">
           <span class="logo-icon" aria-hidden="true">🍪</span>
-          <span>ClickCookies</span>
+          <span>Click Cookies</span>
         </a>
         <nav class="header-nav" aria-label="Main navigation">
           ${navItems}
