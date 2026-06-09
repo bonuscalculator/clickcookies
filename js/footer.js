@@ -13,7 +13,7 @@
           <div class="footer-brand">
             <div class="header-logo" style="font-size:1.4rem;font-weight:900;color:var(--cookie-gold);display:flex;align-items:center;gap:10px;">
               <span style="font-size:2rem;animation:spin-slow 8s linear infinite;display:inline-block;">🍪</span>
-              ClickCookies
+              Click Cookies
             </div>
             <p>The most addictive cookie clicker game on the web. Click, bake, upgrade, and build your cookie empire — one delicious cookie at a time. Free to play, forever.</p>
           </div>
@@ -21,21 +21,22 @@
           <div>
             <div class="footer-col-title">Game</div>
             <div class="footer-links">
-              <a href="#game">Play Now</a>
-              <a href="#how-to-play">How To Play</a>
-              <a href="#buildings-info">Buildings</a>
-              <a href="#upgrades-info">Upgrades</a>
-              <a href="#achievements">Achievements</a>
+              <a href="/#game">Play Now</a>
+              <a href="/#how-to-play">How To Play</a>
+              <a href="/#buildings-info">Buildings</a>
+              <a href="/#upgrades-info">Upgrades</a>
+              <a href="/#achievements">Achievements</a>
             </div>
           </div>
 
           <div>
             <div class="footer-col-title">Info</div>
             <div class="footer-links">
-              <a href="#features">Features</a>
-              <a href="#tips">Pro Tips</a>
-              <a href="#faq">FAQ</a>
-              <a href="#cta">Get Started</a>
+              <a href="/#features">Features</a>
+              <a href="/#tips">Pro Tips</a>
+              <a href="/#faq">FAQ</a>
+              <a href="/about">About</a>
+              <a href="/contact">Contact</a>
             </div>
           </div>
 
@@ -63,9 +64,9 @@
             &copy; ${year} ClickCookies &mdash; clickcookies.com &mdash; All rights reserved
           </div>
           <div class="footer-legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Cookies Policy</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="/cookies">Cookies Policy</a>
           </div>
         </div>
       </div>
