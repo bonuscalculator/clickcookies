@@ -25,7 +25,7 @@
 
     header.innerHTML = `
       <div class="header-inner">
-        <a href="#" class="header-logo" aria-label="ClickCookies Home">
+        <a href="/" class="header-logo" aria-label="ClickCookies Home">
           <span class="logo-icon" aria-hidden="true">🍪</span>
           <span>Click Cookies</span>
         </a>
