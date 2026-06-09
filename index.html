@@ -1,613 +1,730 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>🍪 Cookie Clicker</title>
-    <style>
-        * {
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        body {
-            background: linear-gradient(145deg, #f9e7b3 0%, #f5cba0 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Segoe UI', 'Quicksand', system-ui, -apple-system, 'Roboto', sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
+  <!-- ===== SEO Meta ===== -->
+  <title>ClickCookies — Free Cookie Clicker Game Online | Play Now</title>
+  <meta name="description" content="Play ClickCookies, the ultimate free cookie clicker game online! Click cookies, build your bakery empire, unlock upgrades, earn achievements, and bake trillions of cookies. No download required." />
+  <meta name="keywords" content="cookie clicker, cookie clicker game, click cookies, online cookie game, idle cookie game, cookie clicker online, free cookie game, baking game, idle clicker, incremental game, cookie empire, cookie upgrades, cookie buildings" />
+  <meta name="author" content="ClickCookies" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://clickcookies.com/" />
 
-        /* main game panel */
-        .game-container {
-            max-width: 550px;
-            width: 100%;
-            background: rgba(255, 248, 225, 0.9);
-            border-radius: 80px 80px 70px 70px;
-            box-shadow: 0 25px 40px rgba(0, 0, 0, 0.25), inset 0 1px 3px rgba(255, 255, 200, 0.8);
-            backdrop-filter: blur(2px);
-            padding: 20px 25px 35px;
-            transition: all 0.2s ease;
-            text-align: center;
-            border: 2px solid #ffdd99;
-        }
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://clickcookies.com/" />
+  <meta property="og:title"       content="ClickCookies — Free Cookie Clicker Game Online" />
+  <meta property="og:description" content="The most addictive free cookie clicker game online. Click, bake, upgrade, and build your cookie empire. Play now — no download needed!" />
+  <meta property="og:image"       content="https://clickcookies.com/images/og-image.jpg" />
+  <meta property="og:site_name"   content="ClickCookies" />
 
-        h1 {
-            font-size: 2.2rem;
-            margin: 0 0 5px 0;
-            color: #7b3f00;
-            text-shadow: 3px 3px 0 #ffce8e;
-            letter-spacing: 2px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@clickcookies" />
+  <meta name="twitter:title"       content="ClickCookies — Free Cookie Clicker Game" />
+  <meta name="twitter:description" content="Click cookies, unlock upgrades, and build your bakery empire in the most addictive idle game online." />
+  <meta name="twitter:image"       content="https://clickcookies.com/images/og-image.jpg" />
 
-        .cookie-count-panel {
-            background: #fff2df;
-            border-radius: 100px;
-            padding: 12px 20px;
-            margin: 15px 0 10px;
-            box-shadow: inset 0 2px 5px rgba(99, 57, 34, 0.1), 0 5px 10px rgba(0,0,0,0.05);
+  <!-- ===== Schema Markup ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ClickCookies",
+    "url": "https://clickcookies.com",
+    "description": "Free cookie clicker game online. Click cookies, build buildings, unlock upgrades, and bake trillions of cookies in this addictive idle clicker game.",
+    "applicationCategory": "Game",
+    "genre": "Idle Clicker, Incremental Game",
+    "operatingSystem": "Any (Browser-based)",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "ClickCookies",
+      "url": "https://clickcookies.com"
+    },
+    "screenshot": "https://clickcookies.com/images/screenshot.jpg",
+    "featureList": [
+      "Cookie clicking mechanics",
+      "10 unique buildings",
+      "12 upgrades system",
+      "18 achievements",
+      "Golden cookie events",
+      "Auto-save progress",
+      "Mobile compatible"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is ClickCookies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ClickCookies is a free browser-based cookie clicker idle game where you click a giant cookie to bake cookies, then spend them on buildings and upgrades to produce even more cookies automatically."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Is ClickCookies free to play?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! ClickCookies is completely free to play with no downloads, no installations, and no purchases required. Just open your browser and start clicking."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does ClickCookies save my progress?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, your progress is automatically saved to your browser's local storage every 30 seconds. Your cookie empire will be waiting for you when you return."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a Golden Cookie in ClickCookies?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Golden Cookie is a special shimmering cookie that randomly appears on screen. Click it quickly before it vanishes to receive a powerful bonus — like Cookie Frenzy (7× production for 20 seconds), Lucky Cookies (free cookies), or Click Frenzy (777× click power)."
+        }
+      }
+    ]
+  }
+  </script>
 
-        .cookie-number {
-            font-size: 3.8rem;
-            font-weight: 800;
-            color: #a55117;
-            background: linear-gradient(135deg, #c96f2c, #7b3a10);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            text-shadow: none;
-            letter-spacing: 2px;
-        }
+  <!-- Preload fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 
-        .cookie-label {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #b95f1a;
-            margin-left: 6px;
-        }
+  <link rel="stylesheet" href="css/style.css" />
 
-        /* big cookie click zone */
-        .cookie-jar {
-            cursor: pointer;
-            margin: 18px 0 15px;
-            transition: transform 0.08s linear;
-            display: inline-block;
-            filter: drop-shadow(0 12px 15px rgba(0,0,0,0.2));
-        }
-
-        .cookie-jar:active {
-            transform: scale(0.94);
-        }
-
-        .giant-cookie {
-            width: 180px;
-            height: 180px;
-            background: radial-gradient(circle at 35% 35%, #f0b87a, #cd7a32);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 7rem;
-            box-shadow: 0 15px 0 #8b4c1c, 0 20px 25px rgba(0,0,0,0.3);
-            transition: all 0.05s linear;
-            background-size: 20px 20px;
-            background-image: radial-gradient(circle at 30% 40%, rgba(110, 55, 10, 0.2) 2%, transparent 2.5%);
-        }
-
-        .giant-cookie span {
-            transform: scale(1.1);
-            display: inline-block;
-            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
-        }
-
-        /* stats & upgrades */
-        .stats {
-            background: #ecdbc1;
-            border-radius: 60px;
-            padding: 10px 18px;
-            margin: 15px 0 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 12px;
-            font-weight: bold;
-        }
-
-        .cps-box {
-            background: #63411e;
-            padding: 6px 16px;
-            border-radius: 40px;
-            color: #ffefb9;
-            font-size: 1.2rem;
-        }
-
-        .cps-value {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: #ffd966;
-        }
-
-        .upgrade-section {
-            background: #ffe3b5;
-            border-radius: 48px;
-            padding: 20px 15px;
-            margin: 10px 0 12px;
-            box-shadow: inset 0 0 0 1px #fff3e0, 0 8px 14px rgba(0,0,0,0.1);
-        }
-
-        .upgrade-title {
-            font-weight: bold;
-            font-size: 1.2rem;
-            background: #b96f2e;
-            display: inline-block;
-            padding: 5px 20px;
-            border-radius: 50px;
-            color: white;
-            margin-bottom: 18px;
-        }
-
-        .upgrade-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 18px;
-            justify-content: center;
-        }
-
-        .upgrade-card {
-            background: #fef2e0;
-            border-radius: 50px;
-            padding: 12px 18px;
-            min-width: 130px;
-            flex: 1 0 auto;
-            box-shadow: 0 5px 0 #c9915c;
-            cursor: pointer;
-            transition: 0.07s linear;
-            border: none;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .upgrade-card:active {
-            transform: translateY(3px);
-            box-shadow: 0 2px 0 #c9915c;
-        }
-
-        .upgrade-name {
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .upgrade-cost {
-            background: #5a2e0e;
-            color: #ffda99;
-            border-radius: 40px;
-            padding: 4px 12px;
-            font-size: 0.9rem;
-            display: inline-block;
-            margin-top: 8px;
-        }
-
-        .disabled-card {
-            opacity: 0.55;
-            filter: grayscale(0.1);
-            cursor: not-allowed;
-            transform: none !important;
-        }
-
-        .reset-btn {
-            background: #ad5a2a;
-            border: none;
-            color: white;
-            font-size: 1rem;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 60px;
-            cursor: pointer;
-            margin-top: 12px;
-            transition: 0.1s;
-            box-shadow: 0 4px 0 #572d12;
-        }
-
-        .reset-btn:active {
-            transform: translateY(3px);
-            box-shadow: none;
-        }
-
-        .click-animation {
-            position: fixed;
-            pointer-events: none;
-            font-size: 2rem;
-            font-weight: bold;
-            color: #ffd966;
-            text-shadow: 1px 1px 0 #7b3f00;
-            z-index: 999;
-            animation: floatUpFade 0.7s ease-out forwards;
-        }
-
-        @keyframes floatUpFade {
-            0% {
-                opacity: 1;
-                transform: translateY(0px) scale(0.8);
-            }
-            70% {
-                opacity: 0.8;
-                transform: translateY(-55px) scale(1.1);
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(-100px) scale(1.3);
-            }
-        }
-
-        footer {
-            font-size: 0.7rem;
-            margin-top: 18px;
-            color: #ad6b3c;
-        }
-
-        @media (max-width: 470px) {
-            .game-container {
-                padding: 16px 18px 28px;
-            }
-            .giant-cookie {
-                width: 140px;
-                height: 140px;
-                font-size: 5rem;
-            }
-            .cookie-number {
-                font-size: 2.8rem;
-            }
-            .upgrade-card {
-                min-width: 110px;
-                padding: 8px 12px;
-            }
-        }
-    </style>
+  <!-- Favicon inline SVG -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍪</text></svg>" />
 </head>
 <body>
 
-<div class="game-container">
-    <h1>
-        🍪 COOKIE CLICKER
-        <span style="font-size: 1.8rem;">🍪</span>
-    </h1>
+  <!-- ===== HEADER (JS component) ===== -->
+  <header id="site-header" role="banner"></header>
 
-    <div class="cookie-count-panel">
-        <span class="cookie-number" id="cookieCountDisplay">0</span>
-        <span class="cookie-label">cookies 🍪</span>
-    </div>
+  <!-- ===== FRENZY BANNER ===== -->
+  <div class="frenzy-banner" role="alert" aria-live="polite">🎉 Cookie Frenzy!</div>
 
-    <!-- giant clickable cookie -->
-    <div class="cookie-jar" id="clickCookieBtn">
-        <div class="giant-cookie">
-            <span>🍪</span>
+  <!-- ===== GOLDEN COOKIE ===== -->
+  <div class="golden-cookie" id="golden-cookie" role="button" tabindex="0"
+       aria-label="Click the Golden Cookie for a bonus!" onclick="window.CookieGameAPI && window.CookieGameAPI.collectGolden()">
+    <div class="golden-pulse"></div>
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23FFD700' stroke='%23FFA500' stroke-width='3'/%3E%3Ccircle cx='35' cy='38' r='6' fill='%23CC8800' opacity='.6'/%3E%3Ccircle cx='62' cy='32' r='4' fill='%23CC8800' opacity='.5'/%3E%3Ccircle cx='55' cy='60' r='7' fill='%23CC8800' opacity='.6'/%3E%3Ccircle cx='28' cy='58' r='5' fill='%23CC8800' opacity='.5'/%3E%3Ccircle cx='70' cy='55' r='4' fill='%23CC8800' opacity='.4'/%3E%3Ccircle cx='45' cy='75' r='5' fill='%23CC8800' opacity='.5'/%3E%3Ctext x='50' y='55' text-anchor='middle' font-size='28' opacity='.15'%3E✨%3C/text%3E%3C/svg%3E"
+         alt="Golden Cookie bonus" />
+  </div>
+
+  <main>
+
+    <!-- ===== SECTION 1: HERO ===== -->
+    <section id="hero" aria-label="Hero — Play Cookie Clicker">
+      <div class="hero-particles" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge fade-in">
+            <span>🎮</span> Free Browser Game · No Download
+          </div>
+          <h1 class="hero-title fade-in">
+            The World's Most<br/>
+            <span class="highlight">Addictive Cookie</span><br/>
+            Clicker Game
+          </h1>
+          <p class="hero-desc fade-in">
+            Click the cookie. Build your empire. Bake trillions. ClickCookies is the ultimate free idle clicker — no download, no sign-up, just pure cookie-baking glory.
+          </p>
+          <div class="hero-stats fade-in">
+            <div>
+              <div class="hero-stat-num" data-count="500" data-suffix="M+">0</div>
+              <div class="hero-stat-label">Cookies Baked</div>
+            </div>
+            <div>
+              <div class="hero-stat-num" data-count="10" data-suffix=" Buildings">0</div>
+              <div class="hero-stat-label">Unique Buildings</div>
+            </div>
+            <div>
+              <div class="hero-stat-num" data-count="18" data-suffix=" Badges">0</div>
+              <div class="hero-stat-label">Achievements</div>
+            </div>
+          </div>
+          <div class="hero-btns fade-in">
+            <a href="#game" class="btn-primary">🍪 Start Baking Now</a>
+            <a href="#how-to-play" class="btn-secondary">📖 How to Play</a>
+          </div>
         </div>
-    </div>
 
-    <div class="stats">
-        <div>✨ per click: <strong id="clickPowerVal">1</strong></div>
-        <div class="cps-box">⚡ CPS: <span id="cpsValue" class="cps-value">0</span></div>
-    </div>
-
-    <div class="upgrade-section">
-        <div class="upgrade-title">🍪 UPGRADE YOUR BAKERY 🧑‍🍳</div>
-        <div class="upgrade-grid" id="upgradesContainer">
-            <!-- upgrades injected dynamically with js -->
+        <div class="hero-cookie-wrap" aria-label="Click the cookie to start">
+          <div class="hero-cookie-ring ring-1" aria-hidden="true"></div>
+          <div class="hero-cookie-ring ring-2" aria-hidden="true"></div>
+          <div class="hero-cookie-ring ring-3" aria-hidden="true"></div>
+          <div class="cookie-glow" aria-hidden="true"></div>
+          <div class="cookie-orbit orbit-1" aria-hidden="true">⭐</div>
+          <div class="cookie-orbit orbit-2" aria-hidden="true">✨</div>
+          <div class="cookie-orbit orbit-3" aria-hidden="true">🍫</div>
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='96' fill='%23C8762B' stroke='%23A0561A' stroke-width='4'/%3E%3Ccircle cx='100' cy='100' r='88' fill='%23D4894A'/%3E%3Cellipse cx='100' cy='105' rx='78' ry='72' fill='%23E8A060'/%3E%3Ccircle cx='65' cy='72' r='12' fill='%235C3317' opacity='.85'/%3E%3Ccircle cx='130' cy='65' r='9' fill='%235C3317' opacity='.8'/%3E%3Ccircle cx='115' cy='115' r='13' fill='%235C3317' opacity='.85'/%3E%3Ccircle cx='60' cy='120' r='10' fill='%235C3317' opacity='.8'/%3E%3Ccircle cx='145' cy='110' r='8' fill='%235C3317' opacity='.75'/%3E%3Ccircle cx='85' cy='148' r='11' fill='%235C3317' opacity='.8'/%3E%3Ccircle cx='140' cy='148' r='7' fill='%235C3317' opacity='.7'/%3E%3Ccircle cx='100' cy='88' r='6' fill='%235C3317' opacity='.6'/%3E%3Ccircle cx='75' cy='95' r='4' fill='%23F4D06A' opacity='.5'/%3E%3Ccircle cx='125' cy='92' r='3' fill='%23F4D06A' opacity='.4'/%3E%3C/svg%3E"
+            alt="Giant Cookie — Click to bake cookies"
+            class="hero-cookie-img"
+            id="hero-cookie-btn"
+            role="button"
+            tabindex="0"
+            aria-label="Click the cookie to bake"
+          />
         </div>
-    </div>
+      </div>
+    </section>
 
-    <button class="reset-btn" id="resetGameBtn">⟳ reset game</button>
-    <footer>click the cookie · buy upgrades · endless bakery!</footer>
-</div>
+    <!-- ===== SECTION 2: LIVE STATS BANNER ===== -->
+    <section id="cookie-counter" aria-label="Live game statistics">
+      <div class="counter-inner">
+        <div class="counter-item">
+          <div class="counter-num" data-live="cookies">0</div>
+          <div class="counter-label">Cookies Right Now</div>
+        </div>
+        <div class="counter-divider" aria-hidden="true"></div>
+        <div class="counter-item">
+          <div class="counter-num" data-live="total">0</div>
+          <div class="counter-label">Total Baked</div>
+        </div>
+        <div class="counter-divider" aria-hidden="true"></div>
+        <div class="counter-item">
+          <div class="counter-num" data-live="cps">0/s</div>
+          <div class="counter-label">Cookies Per Second</div>
+        </div>
+        <div class="counter-divider" aria-hidden="true"></div>
+        <div class="counter-item">
+          <div class="counter-num" data-live="buildings">0</div>
+          <div class="counter-label">Buildings Owned</div>
+        </div>
+      </div>
+    </section>
 
-<script>
-    // ------------------- GAME STATE -------------------
-    let cookies = 0.0;          // total cookies owned
-    let clickMultiplier = 1;     // per-click base = 1 * multiplier
-    // upgrade structures: each upgrade provides passive CPS + click bonus (or just cps)
-    // We'll have 4 classic upgrades: 
-    // 1. Grandma (cps +0.5, click +0)  -> but to keep design simple, each upgrade gives cps & some also increase click power.
-    // Actually better: separate upgrades:
-    // Upgrade A: "Stronger Fingers" -> increases click value by +1 per click
-    // Upgrade B: "Oven Boys" -> +0.8 cookies per second
-    // Upgrade C: "Cookie Farm" -> +2.5 cps and +2 click bonus? No, to be coherent:
-    // Let's define 3 upgrades with both click boost and CPS, simple & fun.
-    // But to avoid confusion, I'll show:
-    // [🍪 Clicker Glove] +1 per click, +0.5 CPS
-    // [🍰 Pastry Chef]  +2 per click, +1.5 CPS
-    // [🏭 Mega Factory] +5 per click, +4 CPS
-    // plus one special: [✨ Golden Spatula] +10 per click, +8 CPS
-    // Nice and scaling.
+    <!-- ===== SECTION 3: THE GAME ===== -->
+    <section id="game" aria-label="Cookie Clicker Game">
+      <div class="section-header">
+        <div class="section-eyebrow">🎮 Play Now — Free</div>
+        <h2 class="section-title">Your <span class="grad">Cookie Empire</span> Awaits</h2>
+        <p class="section-desc">Click the cookie to bake, buy buildings to automate, and unlock powerful upgrades to grow your cookie production exponentially.</p>
+      </div>
 
-    const upgrades = [
-        { id: 0, name: "🧤 Clicker Glove", desc: "+1 per click", clickBonus: 1, cpsBonus: 0.5, baseCost: 15, owned: 0, currentCost: 15 },
-        { id: 1, name: "🍰 Pastry Chef", desc: "+2 per click", clickBonus: 2, cpsBonus: 1.5, baseCost: 50, owned: 0, currentCost: 50 },
-        { id: 2, name: "🏭 Mega Factory", desc: "+5 per click", clickBonus: 5, cpsBonus: 4, baseCost: 180, owned: 0, currentCost: 180 },
-        { id: 3, name: "✨ Golden Spatula", desc: "+10 per click", clickBonus: 10, cpsBonus: 8, baseCost: 600, owned: 0, currentCost: 600 }
-    ];
+      <div class="game-layout">
 
-    // total passive CPS (cookies per second)
-    let totalCPS = 0;
-    // total click bonus (base click = 1, plus sum of all owned upgrades clickBonus)
-    let totalClickBonus = 0;
+        <!-- Left: Upgrades -->
+        <aside class="game-panel" aria-label="Upgrades">
+          <div class="panel-header">
+            <span>⬆️</span>
+            <div class="panel-title">Upgrades</div>
+          </div>
+          <div class="upgrades-list" id="upgrades-list" role="list" aria-label="Available upgrades"></div>
+        </aside>
 
-    // DOM elements
-    const cookieCountSpan = document.getElementById("cookieCountDisplay");
-    const clickPowerSpan = document.getElementById("clickPowerVal");
-    const cpsSpan = document.getElementById("cpsValue");
-    const upgradesContainer = document.getElementById("upgradesContainer");
-    const clickBtn = document.getElementById("clickCookieBtn");
-    const resetBtn = document.getElementById("resetGameBtn");
+        <!-- Center: Main Cookie -->
+        <div class="game-center">
+          <div class="cookie-clicker-area" role="main" aria-label="Cookie baking area">
+            <div class="game-cookie-score">
+              <span id="game-score">0</span>
+              <span> cookies</span>
+            </div>
+            <div class="game-cps" id="game-cps-bar">0 cookies/sec</div>
+            <button class="game-cookie-btn" id="game-cookie-btn" aria-label="Click to bake a cookie">
+              <img
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='96' fill='%23C8762B' stroke='%23A0561A' stroke-width='4'/%3E%3Ccircle cx='100' cy='100' r='88' fill='%23D4894A'/%3E%3Cellipse cx='100' cy='105' rx='78' ry='72' fill='%23E8A060'/%3E%3Ccircle cx='65' cy='72' r='12' fill='%235C3317' opacity='.85'/%3E%3Ccircle cx='130' cy='65' r='9' fill='%235C3317' opacity='.8'/%3E%3Ccircle cx='115' cy='115' r='13' fill='%235C3317' opacity='.85'/%3E%3Ccircle cx='60' cy='120' r='10' fill='%235C3317' opacity='.8'/%3E%3Ccircle cx='145' cy='110' r='8' fill='%235C3317' opacity='.75'/%3E%3Ccircle cx='85' cy='148' r='11' fill='%235C3317' opacity='.8'/%3E%3Ccircle cx='140' cy='148' r='7' fill='%235C3317' opacity='.7'/%3E%3Ccircle cx='100' cy='88' r='6' fill='%235C3317' opacity='.6'/%3E%3C/svg%3E"
+                alt="Cookie — click me!"
+              />
+            </button>
+            <div class="click-hint" aria-hidden="true">👆 Click the cookie!</div>
+          </div>
 
-    // helper: update displayed stats & upgrade buttons state
-    function recalcStats() {
-        // compute total click bonus from upgrades that are owned
-        let sumClickBonus = 0;
-        let sumCPS = 0;
-        for (let up of upgrades) {
-            if (up.owned > 0) {
-                sumClickBonus += up.clickBonus;
-                sumCPS += up.cpsBonus;
-            }
-        }
-        totalClickBonus = sumClickBonus;
-        totalCPS = sumCPS;
-        // update UI elements
-        clickPowerSpan.innerText = (1 + totalClickBonus);
-        cpsSpan.innerText = totalCPS.toFixed(1);
-    }
+          <div class="game-stats-bar">
+            <div class="stat-card">
+              <div class="stat-card-val" id="game-total">0</div>
+              <div class="stat-card-lbl">Total Baked</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-val" id="game-cps">0/s</div>
+              <div class="stat-card-lbl">Per Second</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-val" id="game-clicks">0</div>
+              <div class="stat-card-lbl">Clicks</div>
+            </div>
+          </div>
 
-    // main update of cookie display & upgrade button availability & rendering
-    function updateUI() {
-        // format cookie number: no decimals if integer, else 1 decimal
-        let displayCookies = cookies;
-        if (Number.isInteger(displayCookies)) {
-            cookieCountSpan.innerText = Math.floor(displayCookies);
-        } else {
-            cookieCountSpan.innerText = displayCookies.toFixed(1);
-        }
-        recalcStats();  // refresh click power and CPS values based on owned upgrades
+          <div style="text-align:center;margin-top:8px;">
+            <button onclick="window.CookieGameAPI && window.CookieGameAPI.resetGame()"
+              style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:var(--text-muted);padding:8px 20px;border-radius:50px;cursor:pointer;font-size:0.82rem;font-weight:700;transition:all 0.2s;"
+              onmouseover="this.style.borderColor='rgba(255,107,53,0.4)';this.style.color='var(--cookie-warm)'"
+              onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='var(--text-muted)'"
+              aria-label="Reset game progress">
+              🔄 Reset Progress
+            </button>
+          </div>
+        </div>
 
-        // render upgrade cards (dynamic)
-        renderUpgradeButtons();
+        <!-- Right: Buildings -->
+        <aside class="game-panel" aria-label="Buildings">
+          <div class="panel-header">
+            <span>🏗️</span>
+            <div class="panel-title">Buildings</div>
+          </div>
+          <div class="buildings-list" id="buildings-list" role="list" aria-label="Available buildings"></div>
+        </aside>
 
-        // store game state to localStorage if you want auto-save (simple)
-        saveGameToLocal();
-    }
+      </div>
 
-    // render upgrade buttons fresh
-    function renderUpgradeButtons() {
-        upgradesContainer.innerHTML = "";
-        for (let idx = 0; idx < upgrades.length; idx++) {
-            const up = upgrades[idx];
-            const canAfford = cookies >= up.currentCost;
-            const cardDiv = document.createElement("div");
-            cardDiv.className = `upgrade-card ${!canAfford ? "disabled-card" : ""}`;
-            if (canAfford) {
-                cardDiv.style.cursor = "pointer";
-            } else {
-                cardDiv.style.cursor = "not-allowed";
-            }
+      <!-- In-game Achievements -->
+      <div style="max-width:1280px;margin:32px auto 0;">
+        <div class="panel-header" style="background:rgba(244,168,32,0.06);border:1px solid rgba(244,168,32,0.15);border-radius:var(--radius) var(--radius) 0 0;border-bottom:1px solid rgba(244,168,32,0.1);">
+          <span>🏆</span>
+          <div class="panel-title">Your Achievements</div>
+        </div>
+        <div id="achievements-game-grid"
+          style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;padding:16px;background:rgba(255,255,255,0.02);border:1px solid rgba(244,168,32,0.1);border-top:none;border-radius:0 0 var(--radius) var(--radius);"
+          role="list" aria-label="Achievements">
+        </div>
+      </div>
+    </section>
 
-            // owned indicator
-            let ownedText = up.owned > 0 ? ` (owned)` : ``;
-            cardDiv.innerHTML = `
-                <div class="upgrade-name">
-                    ${up.name} ${ownedText}
-                </div>
-                <div style="font-size:0.8rem; margin:6px 0;">${up.desc} +${up.clickBonus}🍪/click, +${up.cpsBonus}🍪/s</div>
-                <div class="upgrade-cost">🍪 ${Math.floor(up.currentCost)} cookies</div>
-            `;
+    <!-- ===== SECTION 4: FEATURES ===== -->
+    <section id="features" aria-labelledby="features-title">
+      <div class="section-header">
+        <div class="section-eyebrow">⚡ What Makes Us Different</div>
+        <h2 class="section-title" id="features-title">Packed With <span class="grad">Delicious Features</span></h2>
+        <p class="section-desc">ClickCookies is built for maximum cookie-baking satisfaction, with features that keep your empire growing 24/7.</p>
+      </div>
+      <div class="features-grid" style="max-width:1280px;margin:0 auto;">
+        <article class="feature-card fade-in">
+          <span class="feature-icon">🍪</span>
+          <h3 class="feature-title">Satisfying Click Mechanics</h3>
+          <p class="feature-text">Every click delivers a punchy, satisfying visual response. Watch sparks fly, cookies multiply, and your counter climb with every tap or click — on desktop and mobile.</p>
+        </article>
+        <article class="feature-card fade-in">
+          <span class="feature-icon">🏭</span>
+          <h3 class="feature-title">10 Unique Buildings</h3>
+          <p class="feature-text">From humble Cursors and loving Grandmas to Wizard Towers and Spaceships — each building auto-bakes cookies per second, letting your empire grow even while you sleep.</p>
+        </article>
+        <article class="feature-card fade-in">
+          <span class="feature-icon">⬆️</span>
+          <h3 class="feature-title">12 Powerful Upgrades</h3>
+          <p class="feature-text">Unlock game-changing upgrades that multiply your click power and production rates. From Reinforced Rolling Pins to the Cookie Singularity — each upgrade transforms your output.</p>
+        </article>
+        <article class="feature-card fade-in">
+          <span class="feature-icon">✨</span>
+          <h3 class="feature-title">Golden Cookie Events</h3>
+          <p class="feature-text">Random Golden Cookies appear on screen — click them fast for massive bonuses! Cookie Frenzy (7× production), Lucky Cookie (free cookies), or Click Frenzy (777× click power).</p>
+        </article>
+        <article class="feature-card fade-in">
+          <span class="feature-icon">🏆</span>
+          <h3 class="feature-title">18 Achievements</h3>
+          <p class="feature-text">Unlock achievements by reaching milestones — click 1,000 times, bake your first billion cookies, own 10 grandmas, or trigger your first Cookie Frenzy. Badge hunters, rejoice!</p>
+        </article>
+        <article class="feature-card fade-in">
+          <span class="feature-icon">💾</span>
+          <h3 class="feature-title">Auto-Save Progress</h3>
+          <p class="feature-text">Your cookie empire is automatically saved to your browser every 30 seconds. Come back after hours away to find your buildings have kept baking while you were gone.</p>
+        </article>
+        <article class="feature-card fade-in">
+          <span class="feature-icon">📱</span>
+          <h3 class="feature-title">Mobile Optimized</h3>
+          <p class="feature-text">ClickCookies plays beautifully on phones, tablets, and desktops. Tap the cookie on your commute, at your desk, or on the couch — cookie baking never stops.</p>
+        </article>
+        <article class="feature-card fade-in">
+          <span class="feature-icon">🚀</span>
+          <h3 class="feature-title">Offline Baking</h3>
+          <p class="feature-text">Your buildings keep producing cookies even when you close the tab. Return to a mountain of freshly baked cookies thanks to our offline production calculation system.</p>
+        </article>
+        <article class="feature-card fade-in">
+          <span class="feature-icon">🎯</span>
+          <h3 class="feature-title">Incremental Depth</h3>
+          <p class="feature-text">An idle game with true depth — production scales from single digits to quadrillions. The deeper you go, the more satisfying each milestone becomes. There's always a next goal.</p>
+        </article>
+      </div>
+    </section>
 
-            if (canAfford) {
-                cardDiv.addEventListener("click", (e) => {
-                    e.stopPropagation();
-                    purchaseUpgrade(idx);
-                });
-            }
-            upgradesContainer.appendChild(cardDiv);
-        }
-    }
+    <!-- ===== SECTION 5: HOW TO PLAY ===== -->
+    <section id="how-to-play" aria-labelledby="htp-title">
+      <div class="section-header">
+        <div class="section-eyebrow">📖 Beginner's Guide</div>
+        <h2 class="section-title" id="htp-title">How to Play <span class="grad">Cookie Clicker</span></h2>
+        <p class="section-desc">New to idle clicker games? Here's everything you need to know to build your cookie empire from the ground up.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card fade-in">
+          <div class="step-num">1</div>
+          <h3 class="step-title">Click the Cookie</h3>
+          <p class="step-text">Start by repeatedly clicking the giant cookie on screen. Each click bakes cookies equal to your current click power. The more you click, the faster you accumulate cookies.</p>
+        </div>
+        <div class="step-card fade-in">
+          <div class="step-num">2</div>
+          <h3 class="step-title">Buy Buildings</h3>
+          <p class="step-text">Spend your cookies on buildings in the right panel. Buildings automatically bake cookies per second — from simple Cursors to Grandmas, Farms, Factories, and beyond.</p>
+        </div>
+        <div class="step-card fade-in">
+          <div class="step-num">3</div>
+          <h3 class="step-title">Unlock Upgrades</h3>
+          <p class="step-text">As you bake more cookies and buy more buildings, upgrades become available. These multiply your click power or boost building production — some by 2×, 3×, or even 777×.</p>
+        </div>
+        <div class="step-card fade-in">
+          <div class="step-num">4</div>
+          <h3 class="step-title">Chase Golden Cookies</h3>
+          <p class="step-text">Keep an eye out for shimmering Golden Cookies that randomly appear on screen. Click them before they vanish for powerful short-term bonuses that supercharge your production!</p>
+        </div>
+      </div>
 
-    // purchase upgrade logic
-    function purchaseUpgrade(index) {
-        const upgrade = upgrades[index];
-        if (cookies >= upgrade.currentCost) {
-            cookies -= upgrade.currentCost;
-            upgrade.owned++;
-            // increase cost for next level: classic formula cost = baseCost * (1.2 ^ owned)
-            // but keep fun progression: baseCost * 1.25 ^ owned
-            const newCost = Math.floor(upgrade.baseCost * Math.pow(1.24, upgrade.owned));
-            upgrade.currentCost = newCost;
-            // after buying recalc CPS and click power from owned!
-            updateUI();
-            // optional: pop small message effect
-            showFloatingText(`+${upgrade.name} purchased!`, "#b87c4a");
-        } else {
-            // not enough cookies - subtle shake or no action
-            const card = document.querySelectorAll(".upgrade-card")[index];
-            if (card) {
-                card.style.transform = "translateX(4px)";
-                setTimeout(() => { if(card) card.style.transform = ""; }, 100);
-            }
-        }
-    }
+      <div style="max-width:800px;margin:56px auto 0;background:rgba(255,255,255,0.03);border:1px solid rgba(244,168,32,0.15);border-radius:var(--radius);padding:40px;" class="fade-in">
+        <h3 style="font-size:1.4rem;font-weight:800;margin-bottom:20px;color:var(--cookie-gold);">🍪 What is a Cookie Clicker Game?</h3>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:16px;">
+          Cookie clicker games are a genre of <strong style="color:var(--text-light);">incremental idle games</strong> where the primary mechanic is clicking a cookie to generate in-game currency. As you accumulate cookies, you unlock buildings and upgrades that produce cookies automatically — allowing production to grow exponentially over time.
+        </p>
+        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:16px;">
+          The original cookie clicker concept was pioneered in 2013 and has inspired countless variations. ClickCookies takes the beloved formula and enhances it with modern visuals, smooth animations, a diverse upgrade tree, special golden cookie events, and a satisfying achievement system.
+        </p>
+        <p style="color:var(--text-muted);line-height:1.8;">
+          Whether you play actively (clicking as fast as you can) or passively (letting your buildings do the work), ClickCookies delivers a deeply satisfying progression loop that keeps you coming back for more. The ultimate goal? Bake every single cookie in the universe.
+        </p>
+      </div>
+    </section>
 
-    // click on giant cookie
-    function clickCookie() {
-        let clickValue = 1 + totalClickBonus;
-        cookies += clickValue;
-        updateUI();
+    <!-- ===== SECTION 6: BUILDINGS ===== -->
+    <section id="buildings-info" aria-labelledby="buildings-title">
+      <div class="section-header">
+        <div class="section-eyebrow">🏗️ Your Production Empire</div>
+        <h2 class="section-title" id="buildings-title">10 Cookie-Baking <span class="grad">Buildings</span></h2>
+        <p class="section-desc">Each building has a unique theme and production rate. Combine them all to build a cookie production empire that stretches from your kitchen to the cosmos.</p>
+      </div>
+      <div class="buildings-showcase">
+        <div class="building-card fade-in">
+          <div class="building-card-icon">👆</div>
+          <h3 class="building-card-name">Cursor</h3>
+          <p class="building-card-desc">The humble beginnings of your empire. Automated cursors click the big cookie for you, generating a small but reliable stream of cookies.</p>
+          <span class="building-card-stat">0.1 cookies/sec</span>
+        </div>
+        <div class="building-card fade-in">
+          <div class="building-card-icon">👵</div>
+          <h3 class="building-card-name">Grandma</h3>
+          <p class="building-card-desc">A loving grandma bakes cookies with secret family recipes. More grandmas means more secret recipes — and more cookies for everyone.</p>
+          <span class="building-card-stat">0.5 cookies/sec</span>
+        </div>
+        <div class="building-card fade-in">
+          <div class="building-card-icon">🌾</div>
+          <h3 class="building-card-name">Cookie Farm</h3>
+          <p class="building-card-desc">Grow fields of cookie dough with organic cookie seeds. Farms produce a steady harvest of fresh cookies from the fertile soil.</p>
+          <span class="building-card-stat">4 cookies/sec</span>
+        </div>
+        <div class="building-card fade-in">
+          <div class="building-card-icon">⛏️</div>
+          <h3 class="building-card-name">Cookie Mine</h3>
+          <p class="building-card-desc">Deep underground, cookie ore veins stretch for miles. Miners extract raw cookie dough from the earth and ship it straight to your bakery.</p>
+          <span class="building-card-stat">10 cookies/sec</span>
+        </div>
+        <div class="building-card fade-in">
+          <div class="building-card-icon">🏭</div>
+          <h3 class="building-card-name">Factory</h3>
+          <p class="building-card-desc">Industrial-scale cookie production with automated ovens, conveyor belts, and quality-control robots running 24 hours a day, 7 days a week.</p>
+          <span class="building-card-stat">40 cookies/sec</span>
+        </div>
+        <div class="building-card fade-in">
+          <div class="building-card-icon">🏦</div>
+          <h3 class="building-card-name">Cookie Bank</h3>
+          <p class="building-card-desc">Your cookies work for you! The Cookie Bank invests your assets in cookie futures, generating compound cookie dividends around the clock.</p>
+          <span class="building-card-stat">100 cookies/sec</span>
+        </div>
+        <div class="building-card fade-in">
+          <div class="building-card-icon">🛕</div>
+          <h3 class="building-card-name">Temple</h3>
+          <p class="building-card-desc">Ancient priests pray to the Cookie Gods without ceasing. Their devotion is rewarded with a divine flow of miraculously baked cookies from the heavens.</p>
+          <span class="building-card-stat">400 cookies/sec</span>
+        </div>
+        <div class="building-card fade-in">
+          <div class="building-card-icon">🧙</div>
+          <h3 class="building-card-name">Wizard Tower</h3>
+          <p class="building-card-desc">Powerful wizards conjure cookies from thin air using ancient cookie-summoning spells. Magic means no raw materials needed — just pure cookie energy.</p>
+          <span class="building-card-stat">1,600 cookies/sec</span>
+        </div>
+        <div class="building-card fade-in">
+          <div class="building-card-icon">🚀</div>
+          <h3 class="building-card-name">Spaceship</h3>
+          <p class="building-card-desc">Your fleet of cookie-harvesting spaceships mines cosmic sugar nebulas and asteroid belts made entirely of biscuit dust out in the far reaches of space.</p>
+          <span class="building-card-stat">6,500 cookies/sec</span>
+        </div>
+        <div class="building-card fade-in">
+          <div class="building-card-icon">⚗️</div>
+          <h3 class="building-card-name">Alchemist Lab</h3>
+          <p class="building-card-desc">The pinnacle of cookie science. Alchemists transmute gold, lead, and even dark matter into pure, premium cookies using forbidden cookie alchemy formulae.</p>
+          <span class="building-card-stat">25,000 cookies/sec</span>
+        </div>
+      </div>
+    </section>
 
-        // animation: floating +1 text near cursor/click area
-        createFloatingNumber(`+${clickValue}`, clickValue > 0 ? "#ffaa44" : "#cc8844");
-        // tiny cookie particle effect: just extra fun
-        addClickRipple();
-    }
+    <!-- ===== SECTION 7: ACHIEVEMENTS ===== -->
+    <section id="achievements" aria-labelledby="achievements-title">
+      <div class="section-header">
+        <div class="section-eyebrow">🏆 Milestones & Badges</div>
+        <h2 class="section-title" id="achievements-title">Unlock <span class="grad">18 Achievements</span></h2>
+        <p class="section-desc">From your first click to baking a trillion cookies — every milestone earns you a badge. How many can you collect?</p>
+      </div>
+      <div class="achievements-grid" style="max-width:1280px;margin:0 auto;">
+        <div class="achievement-badge fade-in"><div class="ach-icon">👆</div><div class="ach-name">First Click</div><div class="ach-req">Click once</div></div>
+        <div class="achievement-badge fade-in"><div class="ach-icon">🖱️</div><div class="ach-name">100 Clicks</div><div class="ach-req">Click 100×</div></div>
+        <div class="achievement-badge fade-in"><div class="ach-icon">💪</div><div class="ach-name">Click Addict</div><div class="ach-req">1,000 clicks</div></div>
+        <div class="achievement-badge fade-in"><div class="ach-icon">🍪</div><div class="ach-name">Cookie Novice</div><div class="ach-req">Bake 100</div></div>
+        <div class="achievement-badge fade-in"><div class="ach-icon">👨‍🍳</div><div class="ach-name">Apprentice</div><div class="ach-req">Bake 10K</div></div>
+        <div class="achievement-badge fade-in"><div class="ach-icon">💰</div><div class="ach-name">Cookie Mogul</div><div class="ach-req">Bake 1M</div></div>
+        <div class="achievement-badge locked fade-in"><div class="ach-icon">✨</div><div class="ach-name">Golden Click</div><div class="ach-req">1 golden cookie</div></div>
+        <div class="achievement-badge locked fade-in"><div class="ach-icon">👑</div><div class="ach-name">Cookie Empire</div><div class="ach-req">10 buildings</div></div>
+        <div class="achievement-badge locked fade-in"><div class="ach-icon">⬆️</div><div class="ach-name">Upgrade Master</div><div class="ach-req">5 upgrades</div></div>
+        <div class="achievement-badge locked fade-in"><div class="ach-icon">⚡</div><div class="ach-name">Speed Baker</div><div class="ach-req">100 cookies/sec</div></div>
+        <div class="achievement-badge locked fade-in"><div class="ach-icon">🤑</div><div class="ach-name">Billionaire</div><div class="ach-req">Bake 1B</div></div>
+        <div class="achievement-badge locked fade-in"><div class="ach-icon">👵</div><div class="ach-name">Grandma Army</div><div class="ach-req">10 Grandmas</div></div>
+        <div class="achievement-badge locked fade-in"><div class="ach-icon">🌾</div><div class="ach-name">Farm Owner</div><div class="ach-req">5 Farms</div></div>
+        <div class="achievement-badge locked fade-in"><div class="ach-icon">🏭</div><div class="ach-name">Industrial</div><div class="ach-req">3 Factories</div></div>
+        <div class="achievement-badge locked fade-in"><div class="ach-icon">🎉</div><div class="ach-name">Frenzy Rider</div><div class="ach-req">3 Frenzies</div></div>
+        <div class="achievement-badge locked fade-in"><div class="ach-icon">💎</div><div class="ach-name">Trillionaire</div><div class="ach-req">Bake 1T</div></div>
+        <div class="achievement-badge locked fade-in"><div class="ach-icon">🤖</div><div class="ach-name">Auto Baker Pro</div><div class="ach-req">20 Cursors</div></div>
+        <div class="achievement-badge locked fade-in"><div class="ach-icon">🌟</div><div class="ach-name">Golden Chaser</div><div class="ach-req">10 golden cookies</div></div>
+      </div>
+    </section>
 
-    // floating number (like +5) that appears near cookie area
-    function createFloatingNumber(text, color = "#ffb347") {
-        const floatDiv = document.createElement("div");
-        floatDiv.className = "click-animation";
-        floatDiv.innerText = text;
-        floatDiv.style.color = color;
-        floatDiv.style.fontWeight = "bold";
-        floatDiv.style.fontSize = "1.9rem";
-        floatDiv.style.left = (Math.random() * 60 + 20) + "%";
-        floatDiv.style.top = "55%";
-        floatDiv.style.position = "fixed";
-        document.body.appendChild(floatDiv);
-        setTimeout(() => {
-            floatDiv.remove();
-        }, 700);
-    }
+    <!-- ===== SECTION 8: UPGRADES INFO ===== -->
+    <section id="upgrades-info" aria-labelledby="upgrades-title">
+      <div class="section-header">
+        <div class="section-eyebrow">⬆️ Power-Up Your Bakery</div>
+        <h2 class="section-title" id="upgrades-title">12 Game-Changing <span class="grad">Upgrades</span></h2>
+        <p class="section-desc">Upgrades are the secret to exponential cookie production. Each one multiplies your output — stack them wisely to bake cookies at astronomical rates.</p>
+      </div>
+      <div class="upgrades-info-grid">
+        <div class="upgrades-info-list">
+          <div class="upgrade-info-item fade-in">
+            <div class="upgrade-info-icon">🥖</div>
+            <div>
+              <div class="upgrade-info-title">Reinforced Rolling Pins</div>
+              <p class="upgrade-info-text">Your first click upgrade — doubles the cookies you bake per click. The foundation of every successful cookie empire starts here.</p>
+            </div>
+          </div>
+          <div class="upgrade-info-item fade-in">
+            <div class="upgrade-info-icon">📖</div>
+            <div>
+              <div class="upgrade-info-title">Grandma's Secret Recipe</div>
+              <p class="upgrade-info-text">Unlock the power of generations of baking knowledge. Doubles Grandma production — because nothing beats homemade.</p>
+            </div>
+          </div>
+          <div class="upgrade-info-item fade-in">
+            <div class="upgrade-info-icon">🍫</div>
+            <div>
+              <div class="upgrade-info-title">Chocolate Infusion</div>
+              <p class="upgrade-info-text">A global 50% production boost that applies to every building you own. Available once you've baked 100,000 cookies total.</p>
+            </div>
+          </div>
+          <div class="upgrade-info-item fade-in">
+            <div class="upgrade-info-icon">🌌</div>
+            <div>
+              <div class="upgrade-info-title">Cookie Singularity</div>
+              <p class="upgrade-info-text">The ultimate upgrade — doubles ALL production at once. Available only to the most dedicated bakers who've crossed the 10 billion cookie threshold.</p>
+            </div>
+          </div>
+          <div class="upgrade-info-item fade-in">
+            <div class="upgrade-info-icon">⚛️</div>
+            <div>
+              <div class="upgrade-info-title">Quantum Dough</div>
+              <p class="upgrade-info-text">Wizard Towers gain quantum-level baking powers, doubling their already formidable cookie output through the mysteries of quantum cookie physics.</p>
+            </div>
+          </div>
+          <div class="upgrade-info-item fade-in">
+            <div class="upgrade-info-icon">💎</div>
+            <div>
+              <div class="upgrade-info-title">Sugar Crystals</div>
+              <p class="upgrade-info-text">A third click multiplier — triple your click power once you've amassed 1,000 cookies. Active clicking becomes massively more rewarding.</p>
+            </div>
+          </div>
+        </div>
+        <div class="upgrades-info-visual fade-in" aria-hidden="true">
+          <div class="upgrades-circle">⬆️</div>
+          <div class="upgrade-floating" style="top:20%;left:10%;animation-duration:3s;">🥖</div>
+          <div class="upgrade-floating" style="top:10%;right:15%;animation-duration:4s;animation-delay:-1s;">📖</div>
+          <div class="upgrade-floating" style="bottom:25%;left:8%;animation-duration:3.5s;animation-delay:-2s;">🍫</div>
+          <div class="upgrade-floating" style="bottom:15%;right:10%;animation-duration:5s;animation-delay:-0.5s;">🌌</div>
+          <div class="upgrade-floating" style="top:50%;right:5%;animation-duration:4.5s;animation-delay:-1.5s;">⚛️</div>
+          <div style="text-align:center;margin-top:24px;">
+            <div style="font-size:3rem;margin-bottom:12px;">✨</div>
+            <div style="font-size:1.2rem;font-weight:800;color:var(--cookie-gold);">Stack upgrades to multiply your power</div>
+            <div style="font-size:0.9rem;color:var(--text-muted);margin-top:8px;">Each upgrade compounds on the ones before it</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    // simple ripple
-    function addClickRipple() {
-        const cookieEl = document.querySelector(".giant-cookie");
-        if (!cookieEl) return;
-        cookieEl.style.transform = "scale(0.96)";
-        setTimeout(() => {
-            if(cookieEl) cookieEl.style.transform = "";
-        }, 90);
-    }
+    <!-- ===== SECTION 9: TIPS ===== -->
+    <section id="tips" aria-labelledby="tips-title">
+      <div class="section-header">
+        <div class="section-eyebrow">💡 Pro Strategies</div>
+        <h2 class="section-title" id="tips-title">Cookie Clicker <span class="grad">Pro Tips</span></h2>
+        <p class="section-desc">Want to bake your first trillion cookies faster? These expert strategies will transform your cookie empire from a hobby bakery into a galactic cookie empire.</p>
+      </div>
+      <div class="tips-grid">
+        <div class="tip-card fade-in">
+          <div class="tip-num">01</div>
+          <h3 class="tip-title">Prioritize Upgrades Over Buildings Early</h3>
+          <p class="tip-text">In the early game, upgrades give massive multipliers for relatively low costs. Buy Reinforced Rolling Pins as your very first purchase — the doubled click power pays for itself almost immediately.</p>
+        </div>
+        <div class="tip-card fade-in">
+          <div class="tip-num">02</div>
+          <h3 class="tip-title">Always Click Golden Cookies</h3>
+          <p class="tip-text">Golden Cookies grant bonuses worth hundreds or thousands of times their rarity cost in production value. The Click Frenzy bonus alone (777× for 13 seconds) can add weeks of passive income in moments.</p>
+        </div>
+        <div class="tip-card fade-in">
+          <div class="tip-num">03</div>
+          <h3 class="tip-title">Balance Buildings with Upgrades</h3>
+          <p class="tip-text">Don't max out one building type. Spread your buildings across multiple types to unlock more upgrades sooner. Each building type has its own upgrade tree that unlocks as you purchase them.</p>
+        </div>
+        <div class="tip-card fade-in">
+          <div class="tip-num">04</div>
+          <h3 class="tip-title">Keep the Tab Open for Frenzies</h3>
+          <p class="tip-text">Cookie Frenzy multiplies all production by 7× for 20 seconds. If you have a high cookies-per-second rate, staying active during frenzies can earn more than an hour of offline production.</p>
+        </div>
+        <div class="tip-card fade-in">
+          <div class="tip-num">05</div>
+          <h3 class="tip-title">Aim for the Next Building Threshold</h3>
+          <p class="tip-text">Each new building type you unlock opens a new upgrade branch. The jump from Grandma to Farm, or Farm to Factory, unlocks upgrades that dwarf the cost of the building itself.</p>
+        </div>
+        <div class="tip-card fade-in">
+          <div class="tip-num">06</div>
+          <h3 class="tip-title">Global Multipliers Are King</h3>
+          <p class="tip-text">Upgrades like Chocolate Infusion (+50% everything) and Cookie Singularity (2× everything) are game-changers. Save up for them strategically — they're worth delaying other purchases.</p>
+        </div>
+      </div>
+    </section>
 
-    function showFloatingText(msg, color) {
-        const floatDiv = document.createElement("div");
-        floatDiv.className = "click-animation";
-        floatDiv.innerText = msg;
-        floatDiv.style.color = color || "#d98c2b";
-        floatDiv.style.fontSize = "1.2rem";
-        floatDiv.style.whiteSpace = "nowrap";
-        floatDiv.style.left = "50%";
-        floatDiv.style.top = "40%";
-        floatDiv.style.transform = "translateX(-50%)";
-        floatDiv.style.background = "rgba(0,0,0,0.5)";
-        floatDiv.style.padding = "4px 12px";
-        floatDiv.style.borderRadius = "40px";
-        floatDiv.style.backdropFilter = "blur(4px)";
-        document.body.appendChild(floatDiv);
-        setTimeout(() => floatDiv.remove(), 800);
-    }
+    <!-- ===== SECTION 10: FAQ ===== -->
+    <section id="faq" aria-labelledby="faq-title">
+      <div class="section-header">
+        <div class="section-eyebrow">❓ Got Questions?</div>
+        <h2 class="section-title" id="faq-title">Frequently Asked <span class="grad">Questions</span></h2>
+        <p class="section-desc">Everything you need to know about ClickCookies — from game mechanics to technical questions.</p>
+      </div>
+      <div class="faq-list">
 
-    // reset everything
-    function resetGame() {
-        if (confirm("Reset all progress? All your cookies and upgrades will vanish!")) {
-            cookies = 0;
-            for (let up of upgrades) {
-                up.owned = 0;
-                up.currentCost = up.baseCost;
-            }
-            totalClickBonus = 0;
-            totalCPS = 0;
-            updateUI();
-            showFloatingText("✨ Game reset! Click again ✨", "#ffb347");
-        }
-    }
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            What is ClickCookies and how does it work?
+            <i class="faq-q-icon" aria-hidden="true">+</i>
+          </div>
+          <div class="faq-a">
+            ClickCookies is a free browser-based idle clicker game. You click a giant cookie to produce cookies, then spend those cookies on buildings that automatically bake for you. The more buildings and upgrades you have, the faster your cookie empire grows. The game continues progressing even when you're not actively clicking.
+          </div>
+        </div>
 
-    // Auto-save to localStorage
-    function saveGameToLocal() {
-        try {
-            const saveData = {
-                cookies: cookies,
-                upgrades: upgrades.map(up => ({ owned: up.owned, currentCost: up.currentCost }))
-            };
-            localStorage.setItem("cookieClickerSave", JSON.stringify(saveData));
-        } catch(e) { console.warn("save failed"); }
-    }
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            Is ClickCookies completely free to play?
+            <i class="faq-q-icon" aria-hidden="true">+</i>
+          </div>
+          <div class="faq-a">
+            Yes! ClickCookies is 100% free to play with absolutely no paywalls, microtransactions, or premium content. Everything in the game — all 10 buildings, 12 upgrades, and 18 achievements — is accessible to every player from day one.
+          </div>
+        </div>
 
-    function loadGameFromLocal() {
-        const raw = localStorage.getItem("cookieClickerSave");
-        if (!raw) return false;
-        try {
-            const data = JSON.parse(raw);
-            if (typeof data.cookies === "number") cookies = data.cookies;
-            if (Array.isArray(data.upgrades) && data.upgrades.length === upgrades.length) {
-                for (let i = 0; i < upgrades.length; i++) {
-                    if (data.upgrades[i]) {
-                        upgrades[i].owned = data.upgrades[i].owned;
-                        upgrades[i].currentCost = data.upgrades[i].currentCost;
-                    }
-                }
-            }
-            updateUI();
-            return true;
-        } catch(e) { return false; }
-    }
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            Does my progress save automatically?
+            <i class="faq-q-icon" aria-hidden="true">+</i>
+          </div>
+          <div class="faq-a">
+            Yes! Your cookie empire is automatically saved to your browser's local storage every 30 seconds. Your progress is also saved when you close or refresh the tab. Just make sure to use the same browser and device — local storage is device-specific. You can also manually reset progress if you want a fresh start.
+          </div>
+        </div>
 
-    // CPS interval: every second add totalCPS to cookies
-    let cpsInterval = null;
-    function startCPSLoop() {
-        if (cpsInterval) clearInterval(cpsInterval);
-        cpsInterval = setInterval(() => {
-            if (totalCPS > 0) {
-                cookies += totalCPS;
-                // limit to avoid crazy big numbers but fine
-                if (cookies > 1e15) cookies = 1e15;
-                updateUI();
-                // show subtle cps tick only occasionally? not needed but keep ui fresh
-            } else {
-                // still update UI to reflect maybe no CPS but fine
-                updateUI();   // ensure display consistent
-            }
-        }, 1000);
-    }
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            What is a Golden Cookie and how do I get one?
+            <i class="faq-q-icon" aria-hidden="true">+</i>
+          </div>
+          <div class="faq-a">
+            Golden Cookies are rare shimmering cookies that randomly appear anywhere on the screen every 30–120 seconds. They glow with a golden aura — click them quickly (they only last 13 seconds) to receive a powerful bonus. The three possible bonuses are: Cookie Frenzy (7× all production for 20s), Lucky Cookie (free cookies worth 15 minutes of production), or Click Frenzy (777× click power for 13s).
+          </div>
+        </div>
 
-    // initialize event listeners and loading
-    function init() {
-        loadGameFromLocal();
-        // ensure consistent currentCost after load (if any mismatch due to old version)
-        for (let up of upgrades) {
-            if (up.owned === 0) up.currentCost = up.baseCost;
-            else {
-                // recalc to make sure cost matches upgrades owned
-                let computed = Math.floor(up.baseCost * Math.pow(1.24, up.owned));
-                if (up.currentCost < computed || up.currentCost !== computed) up.currentCost = computed;
-            }
-        }
-        updateUI();
-        clickBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            clickCookie();
-        });
-        resetBtn.addEventListener("click", () => {
-            resetGame();
-        });
-        startCPSLoop();
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            What is Cookie Frenzy and how do I trigger it?
+            <i class="faq-q-icon" aria-hidden="true">+</i>
+          </div>
+          <div class="faq-a">
+            Cookie Frenzy is a special event triggered by clicking a Golden Cookie. During a Cookie Frenzy, all your cookie production is multiplied by 7× for 20 seconds. There's also a rarer Click Frenzy (777× click power for 13 seconds). You can't manually trigger these — they're random rewards from Golden Cookies. The more Golden Cookies you click, the more chances you get!
+          </div>
+        </div>
 
-        // additional safeguard: recalc every 0.2 sec to avoid ui desync with CPS but not needed.
-    }
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            Do cookies keep baking when I close the tab?
+            <i class="faq-q-icon" aria-hidden="true">+</i>
+          </div>
+          <div class="faq-a">
+            Yes! ClickCookies features offline production. Your buildings continue baking cookies based on your cookies-per-second rate even while the tab is closed. When you return, the game calculates how long you were away and awards you the cookies your empire produced while offline. Building a strong CPS rate is the key to making offline baking meaningful.
+          </div>
+        </div>
 
-    // run init
-    init();
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            How do I unlock upgrades?
+            <i class="faq-q-icon" aria-hidden="true">+</i>
+          </div>
+          <div class="faq-a">
+            Upgrades unlock based on specific conditions — like reaching a certain number of total cookies baked, owning at least one of a specific building type, or reaching a cookies-per-second threshold. Check the upgrades panel (left side of the game) for available and locked upgrades. When an upgrade is available and you have enough cookies, click it to purchase instantly.
+          </div>
+        </div>
 
-    // little extra: optional background animation for cookie when hover
-    // add a manual manual refresh to avoid floating number spam.
-    window.addEventListener("load", () => {
-        // ensure mobile touch works
-        clickBtn.addEventListener("touchstart", (e) => {
-            e.preventDefault();
-            clickCookie();
-        }, { passive: false });
-    });
+        <div class="faq-item">
+          <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+            Can I play ClickCookies on my phone?
+            <i class="faq-q-icon" aria-hidden="true">+</i>
+          </div>
+          <div class="faq-a">
+            Absolutely! ClickCookies is fully optimized for mobile play. The game is designed with touch-friendly controls, responsive layouts that adapt to any screen size, and a smooth tap-to-bake experience on mobile browsers. Just open clickcookies.com in your mobile browser and start tapping!
+          </div>
+        </div>
 
-    // handle page unload save (already saved on each update)
-    window.addEventListener("beforeunload", () => {
-        saveGameToLocal();
-    });
-</script>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 11: CTA ===== -->
+    <section id="cta" aria-labelledby="cta-title">
+      <div class="cta-inner">
+        <div class="section-eyebrow" style="margin-bottom:20px;">🍪 Ready to Bake?</div>
+        <h2 class="cta-title" id="cta-title">Your Cookie Empire<br/><span style="background:linear-gradient(135deg,var(--cookie-gold),var(--cookie-warm),var(--cookie-pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Starts Right Now</span></h2>
+        <p class="cta-desc">No download. No sign-up. No cost. Just you, a cookie, and the dream of baking one trillion delicious cookies. The biggest cookie empires started with a single click.</p>
+        <div class="cta-btns">
+          <a href="#game" class="btn-primary" style="font-size:1.1rem;padding:18px 40px;">🍪 Bake Your First Cookie</a>
+          <a href="#how-to-play" class="btn-secondary">📖 Learn More</a>
+        </div>
+        <p style="margin-top:28px;font-size:0.85rem;color:var(--text-muted);">
+          🔒 No account required &nbsp;·&nbsp; 💾 Auto-saves progress &nbsp;·&nbsp; 📱 Works on all devices
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER (JS component) ===== -->
+  <footer id="site-footer" role="contentinfo"></footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ui.js"></script>
+
 </body>
 </html>
