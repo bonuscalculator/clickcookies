@@ -2,12 +2,13 @@
 
 (function () {
   const NAV_LINKS = [
-    { href: '#game',          label: 'Play Now' },
-    { href: '#features',      label: 'Features' },
-    { href: '#how-to-play',   label: 'How To Play' },
-    { href: '#buildings-info',label: 'Buildings' },
-    { href: '#achievements',  label: 'Achievements' },
-    { href: '#faq',           label: 'FAQ' },
+    { href: '/#game',          label: 'Play Now' },
+    { href: '/#features',      label: 'Features' },
+    { href: '/#how-to-play',   label: 'How To Play' },
+    { href: '/#buildings-info',label: 'Buildings' },
+    { href: '/#achievements',  label: 'Achievements' },
+    { href: '/#faq',           label: 'FAQ' },
+    { href: '/about',           label: 'About' },
   ];
 
   function buildHeader() {
